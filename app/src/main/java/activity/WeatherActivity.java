@@ -95,7 +95,7 @@ public class WeatherActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.switch_city:
-                Intent intent = new Intent(this,homePageActivity.class);
+                Intent intent = new Intent(this,ChooseAreaActivity.class);
                 startActivity(intent);
                 finish();
                 break;
@@ -125,7 +125,7 @@ public class WeatherActivity extends Activity implements View.OnClickListener {
      */
     private void queryWeatherInfo(String weatherCode){
         String address = "http://www.weather.com.cn/data/cityinfo/"+weatherCode+".html";
-        queryFromServer(address,"weatherCode");
+        queryFromServer(address, "weatherCode");
     }
 
     /**
@@ -184,4 +184,6 @@ public class WeatherActivity extends Activity implements View.OnClickListener {
         Intent intent = new Intent(this, AutoUpdateService.class);
         startService(intent);
     }
+
+
 }
